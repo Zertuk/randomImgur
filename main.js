@@ -20,21 +20,6 @@ window.onload = function() {
 		
 
 	loadImg();
- function loadMore()
-{
-   console.log("More loaded");
-   loadImg();
-   $(window).bind('scroll', bindScroll);
- }
-
- function bindScroll(){
-   if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-       $(window).unbind('scroll');
-       loadMore();
-   }
-}
-
-$(window).scroll(bindScroll);
 
 
 		
