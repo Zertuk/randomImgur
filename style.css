@@ -1,0 +1,25 @@
+body {
+	background-color: black;
+}
+
+ #random {
+ 	background-color: black;
+ 	color: white;
+ 	font-size: 20px;
+ 	width: 150px;
+
+ }
+
+ img {
+ 	width: 300px;
+ 	margin: 1%;
+ }
+
+ #wrapper {
+ 	max-width: 100%;
+ 	text-align: center;
+ }
+
+ #imgur {
+ 	margin: 0 auto;
+ }
