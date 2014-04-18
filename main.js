@@ -9,20 +9,20 @@ window.onload = function() {
     	for (var i = 0; i < 5; i++) {
     		var randomPoz = Math.floor(Math.random() * charSet.length);
     		randomString += charSet.substring(randomPoz,randomPoz+1);
-    }
+   	 	}
     return randomString;
-}
+	}
 
-	//uses randomString to make url and add images to #imgur
-var loader = function() {
-	for (i = 0; i < 40; i++) {
+	//runs the loadImg func 50 times to load all the images
+	var loader = function() {
+		for (i = 0; i < 50; i++) {
 
 			loadImg();
 
 		}
 	}		
 
-	
+	//uses randomString to make url and add images to #imgur, then removes images 161px wide which are the broken images
 	var loadImg = function() {
 		 
 
@@ -32,9 +32,9 @@ var loader = function() {
 			images.onload = function() {
 				var thickness = $(images).width();
 				console.log(thickness);
-				if (thickness == 161 || thickness == 24 || thickness == 0) {
+				if (thickness == 161) {
 					div.removeChild(images);
-					
+					i 
 
 				}
 				$(images).width(300);
@@ -43,17 +43,17 @@ var loader = function() {
 
 	loader();
 
-
 	//loads more images after scrolling down half the page, allows infinite scroll
 	$(function(){
  		$(window).scroll(function(){
-       		if($(window).scrollTop() > $(window).height()/2){
+       		if($(window).scrollTop() > $(window).height()/1.5){
            		loadImg();
        }
-   });
-});
+   	
+   })
+})
 
 
-    
+
 
 };
