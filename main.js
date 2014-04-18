@@ -14,21 +14,38 @@ window.onload = function() {
 }
 
 	//uses randomString to make url and add images to #imgur
+var loader = function() {
+	for (i = 0; i < 20; i++) {
+
+			loadImg();
+
+		}
+	}		
+
+	
 	var loadImg = function() {
-		for (i = 0; i < 20; i++) {
+		 
 
 			var images = document.createElement('img');
 			images.setAttribute('src', 'http://i.imgur.com/' + randomString() + '.png');
 			div.appendChild(images);
-		}
-	}		
+			images.onload = function() {
+				var thickness = $(images).width();
+				console.log(thickness);
+				if (thickness == 161 || thickness == 24) {
+					div.removeChild(images);
 
-	loadImg();
+				}
+				$(images).width(300);
+			}
+		}
+
+	loader();
 
 	//loads more images after scrolling down half the page, allows infinite scroll
 	$(function(){
  		$(window).scroll(function(){
-       		if($(window).scrollTop() > $(window).height()/2){
+       		if($(window).scrollTop() > $(window).height()/3){
            		loadImg();
        }
    });
