@@ -14,8 +14,8 @@ window.onload = function() {
 	}
 
 	//runs the loadImg func 50 times to load all the images
-	var loader = function() {
-		for (i = 0; i < 50; i++) {
+	var loader = function(val) {
+		for (i = 0; i < val; i++) {
 
 			loadImg();
 
@@ -34,20 +34,25 @@ window.onload = function() {
 				console.log(thickness);
 				if (thickness == 161) {
 					div.removeChild(images);
-					i 
-
+					
 				}
 				$(images).width(300);
 			}
 		}
 
-	loader();
+	loader(30);
+
+	//button to add more if infinite fails
+	var more = document.getElementById('more');
+	more.addEventListener('click', function() {
+		loader(10);
+	})
 
 	//loads more images after scrolling down half the page, allows infinite scroll
 	$(function(){
  		$(window).scroll(function(){
        		if($(window).scrollTop() > $(window).height()/1.5){
-           		loadImg();
+           		loadImg(10);
        }
    	
    })
