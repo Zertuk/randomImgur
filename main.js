@@ -23,7 +23,7 @@ window.onload = function() {
 
 			loadImg();
 		}
-	}		
+	}
 
 	//uses randomString to make url and add images to #imgur, then removes images 161px wide which are the broken images
 	var loadImg = function() {
@@ -34,6 +34,7 @@ window.onload = function() {
 			images.setAttribute('src', 'http://i.imgur.com/' + randomString() + '.png');
 			var link = document.createElement('a');
 			link.setAttribute('href', images.src);
+			link.setAttribute('target', '_blank');
 			div.appendChild(link);
 			link.appendChild(images);
 			console.log(images.src)
