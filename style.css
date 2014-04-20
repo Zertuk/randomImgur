@@ -34,17 +34,16 @@ body {
 	background-color: red;
 }
 
-#total, #removed {
+#total {
 	color: white;
 	font-size: 30px;
 	margin: 0 auto;
 	position: fixed;
 	font-family: 'Ruluko', sans-serif;	
+	background-color: black;
+	opacity: 0.8;
+	padding: 5px;
 
-}
-
-#removed {
-	margin-top: 40px;
 }
 
 img {
@@ -53,11 +52,12 @@ img {
  	margin: 1%;
 }
 
- #wrapper {
+#wrapper {
  	max-width: 100%;
  	text-align: center;
  }
 
-#imgur {
+#imgurCase {
  	margin: 0 auto;
+ 	text-decoration: none;
  }
