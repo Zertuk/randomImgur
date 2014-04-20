@@ -8,7 +8,27 @@ body {
  	font-size: 20px;
  	width: 150px;
 
- }
+}
+
+#more {
+	margin: 0 auto;
+	margin-top: 10%;
+	font-size: 26px;
+	width: 150px;
+	height: 50px;
+	color: white;
+	text-align: center;
+	font-family: 'Ruluko', sans-serif;	
+	border: 1px solid white;
+}
+
+#more p {
+	margin-top: 10px;
+}
+
+#more:active {
+	background-color: red;
+}
 
  img {
  	max-width: 400px;
