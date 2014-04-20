@@ -4,6 +4,7 @@ window.onload = function() {
 	var totalDiv = document.getElementById('total');
 	var removedDiv = document.getElementById('removed');
 	var total = 0;
+	var removed = 0;
 
 
 	//generates a random string 5 letters in length to use in the url
@@ -43,12 +44,13 @@ window.onload = function() {
 				if (thickness == 161) {
 					link.removeChild(images);
 					div.removeChild(link);
+					removed++
 				
 				}
 				else {
-				$(images).width(300);
+				images.style.width = '300px';
 				total++;
-				totalDiv.innerHTML = '<p>' + total + ' images loaded</p>';
+				totalDiv.innerHTML = '<p>' + total + ' images loaded ' + removed + ' images removed</p>';
 				}
 			}
 		}
@@ -61,15 +63,20 @@ window.onload = function() {
 		loader(15);
 	})
 
-	
+	console.log($(document).height());
 	//loads more images after scrolling down half the page, allows infinite scroll
 	$(function(){
  		$(window).scroll(function(){
-       		if($(window).scrollTop() > $(window).height()/2){
+ 			if($(window).scrollTop() > $(document).height()/2) {
            		loader(15);
+
        }
-   	
+
+ 	
+
    })
+ 		
 })
+
 
 };
