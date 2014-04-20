@@ -1,6 +1,9 @@
 window.onload = function() {
 
 	var div = document.getElementById('imgur');
+	var totalDiv = document.getElementById('total');
+	var removedDiv = document.getElementById('removed');
+	var total = 0;
 
 	//generates a random string 5 letters in length to use in the url
 	function randomString() {
@@ -18,7 +21,6 @@ window.onload = function() {
 		for (i = 0; i < val; i++) {
 
 			loadImg();
-
 		}
 	}		
 
@@ -31,12 +33,15 @@ window.onload = function() {
 			div.appendChild(images);
 			images.onload = function() {
 				var thickness = $(images).width();
-				console.log(thickness);
 				if (thickness == 161) {
 					div.removeChild(images);
-					
+				
 				}
+				else {
 				$(images).width(300);
+				total++;
+				totalDiv.innerHTML = '<p>' + total + ' images loaded</p>';
+				}
 			}
 		}
 
@@ -45,20 +50,17 @@ window.onload = function() {
 	//button to add more if infinite fails
 	var more = document.getElementById('more');
 	more.addEventListener('click', function() {
-		loader(10);
+		loader(15);
 	})
 
 	//loads more images after scrolling down half the page, allows infinite scroll
 	$(function(){
  		$(window).scroll(function(){
        		if($(window).scrollTop() > $(window).height()/1.5){
-           		loadImg(10);
+           		loader(15);
        }
    	
    })
 })
-
-
-
 
 };
